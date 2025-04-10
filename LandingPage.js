@@ -30,24 +30,6 @@ const LandingPage = () => {
         overflow: "hidden",
       }}
     >
-      {/* Background Wave Animation */}
-      <motion.div
-        initial={{ y: 20 }}
-        animate={{ y: -20 }}
-        transition={{ repeat: Infinity, repeatType: "mirror", duration: 2, ease: "easeInOut" }}
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          width: "100%",
-          height: "200px",
-          background: "url('/images/wave.svg')",
-          backgroundRepeat: "repeat-x",
-          backgroundSize: "cover",
-          opacity: 0.3,
-        }}
-      />
-
       {/* Logo as Background */}
       <Box
         sx={{
@@ -56,55 +38,67 @@ const LandingPage = () => {
           height: "100%",
           background: "url('/images/expensifypro-logo.png') no-repeat center",
           backgroundSize: "cover",
-          opacity: 0.1,
-          zIndex: 0,
+          opacity: 0.1, // Makes it slightly transparent
+          zIndex: 0, // Behind everything
         }}
       />
+      >
+            {/* Background Wave Animation */}
+            <motion.div
+              initial={{ y: 20 }}
+              animate={{ y: -20 }}
+              transition={{ repeat: Infinity, repeatType: "mirror", duration: 2, ease: "easeInOut" }}
+              style={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                width: "100%",
+                height: "200px",
+                background: "url('/images/wave.svg')",
+                backgroundRepeat: "repeat-x",
+                backgroundSize: "cover",
+                opacity: 0.3,
+              }}
+            />
 
       {/* Animated 3D Images */}
       <Box
         sx={{
           position: "absolute",
-          top: "4%",
+          top: "10%",
           width: "100%",
           display: "flex",
           justifyContent: "center",
           gap: "40px",
-          zIndex: 1,
+          zIndex: 1, // Ensures these appear above the background
         }}
       >
-        {images.map((image, index) => (
+        {images.map((image) => (
           <motion.img
             key={image.id}
             src={image.src}
             alt={image.alt}
-            style={{ width: "280px", height: "280px", borderRadius: "20px" }}
-            initial={{ y: 0, scale: 1, opacity: 0.9 }}
-            animate={{ y: [0, -10, 0] }} // Floating Effect
-            transition={{ repeat: Infinity, duration: 5,ease: "easeInOut" }}
-            whileHover={{
-              scale: 1.1,
-              boxShadow: "0px 0px 25px rgba(255, 255, 255, 0.9)", // Glowing Effect
-              opacity: 1,
-              
-            }}
+            style={{ width: "300px", height: "300px", borderRadius: "20px" }}
+            initial={{ scale: 1, opacity: 0.8 }}
+            whileHover={{ scale: 1.1, opacity: 1, rotate: 5 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
           />
         ))}
       </Box>
 
       {/* Website Name & Get Started Button */}
-      <Box sx={{ position: "relative", zIndex: 10, mt: "150px" }}>
+      <Box sx={{ position: "relative", zIndex: 2, mt: "100px" }}>
         <Typography variant="h2" fontWeight="bold" color="white">
           ExpensifyPro
         </Typography>
-        <Typography variant="h6" sx={{ mt: 1, color: "black", maxWidth: "600px" }}>
+        <Typography variant="h6" sx={{ mt: 2, color: "white", maxWidth: "600px" }}>
           Smart, seamless, and secure expense tracking for your business.
         </Typography>
 
         <Button
           variant="contained"
           sx={{
-            mt: 1,
+            mt: 4,
             px: 4,
             py: 1,
             fontSize: "1.2rem",
@@ -121,7 +115,7 @@ const LandingPage = () => {
       <Box
         sx={{
           position: "absolute",
-          bottom: "80px",
+          bottom: "10px",
           width: "100%",
           display: "flex",
           justifyContent: "space-between",
@@ -130,13 +124,13 @@ const LandingPage = () => {
         }}
       >
         <Typography variant="body2" color="white">
-          &copy; 2025 ExpensifyPro. <br /> A seamless solution for enterprise expense management.
+          &copy; 2024 ExpensifyPro. <br /> A seamless solution for enterprise expense management.
         </Typography>
 
         <Box>
           <IconButton
             component="a"
-            href="https://www.linkedin.com/in/sheik-noor-mohamed-a5a8a924a"
+            href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME"
             target="_blank"
             rel="noopener noreferrer"
             sx={{ color: "white", "&:hover": { color: "#0e76a8" } }}
@@ -156,7 +150,7 @@ const LandingPage = () => {
 
           <IconButton
             component="a"
-            href="https://github.com/sheikk145"
+            href="https://github.com/YOUR-GITHUB-USERNAME"
             target="_blank"
             rel="noopener noreferrer"
             sx={{ color: "white", "&:hover": { color: "#333" } }}
