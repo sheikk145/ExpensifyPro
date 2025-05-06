@@ -47,29 +47,48 @@ const Dashboard = () => {
       }}
     >
       <Container maxWidth="lg">
-        {/* Header */}
+        {/* Header with Logout */}
         <Box
           sx={{
             background: "linear-gradient(90deg, #4facfe, #00f2fe)",
             p: 4,
             borderRadius: 3,
-            textAlign: "center",
             color: "#fff",
             mb: 6,
             boxShadow: 3,
+            position: "relative",
           }}
         >
-          <Typography variant="h3" fontWeight={400}>
+          <Box
+            sx={{
+              position: "absolute",
+              top: 16,
+              right: 16,
+            }}
+          >
+            <Button
+              variant="contained"
+              color="error"
+              onClick={() => {
+                // Handle actual logout logic here if needed
+                navigate("/login");
+              }}
+            >
+              Logout
+            </Button>
+          </Box>
+
+          <Typography variant="h3" fontWeight={400} textAlign="center">
             🚀 Employee Dashboard
           </Typography>
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle1" textAlign="center">
             Manage and track expenses effortlessly
           </Typography>
         </Box>
 
         {/* Stat Cards */}
         <Grid container spacing={4} justifyContent="center">
-          {[ 
+          {[
             {
               icon: <MonetizationOn sx={{ fontSize: 60 }} />,
               title: "Monthly Expenses",

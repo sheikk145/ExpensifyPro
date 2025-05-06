@@ -61,10 +61,27 @@ const Login = () => {
         <Typography variant="h3" align="center" gutterBottom fontWeight="bold">
           Welcome Back!
         </Typography>
-        <Grid container spacing={4}>
+        <Grid
+          container
+          spacing={4}
+          alignItems="stretch"
+          justifyContent="center"
+          sx={{ display: "flex", mt: 2 }}
+        >
           {/* Manager Login */}
-          <Grid item xs={12} md={6}>
-            <Paper elevation={6} sx={{ p: 4, borderRadius: 4, background: "#ffffffdd" }}>
+          <Grid item xs={12} md={6} display="flex">
+            <Paper
+              elevation={6}
+              sx={{
+                p: 4,
+                borderRadius: 4,
+                background: "#ffffffdd",
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between"
+              }}
+            >
               <Typography variant="h5" align="center" gutterBottom fontWeight={600}>
                 Manager Login
               </Typography>
@@ -103,6 +120,19 @@ const Login = () => {
                     )
                   }}
                 />
+                <Typography align="right" sx={{ mt: 1 }}>
+                  <a
+                    href="/forgot-password/manager"
+                    style={{
+                      textDecoration: "none",
+                      color: "#d32f2f",
+                      fontSize: "14px",
+                      fontWeight: 500
+                    }}
+                  >
+                    Forgot Password?
+                  </a>
+                </Typography>
                 <Button
                   type="submit"
                   fullWidth
@@ -126,8 +156,19 @@ const Login = () => {
           </Grid>
 
           {/* Employee Login */}
-          <Grid item xs={12} md={6}>
-            <Paper elevation={6} sx={{ p: 4, borderRadius: 4, background: "#ffffffdd" }}>
+          <Grid item xs={12} md={6} display="flex">
+            <Paper
+              elevation={6}
+              sx={{
+                p: 4,
+                borderRadius: 4,
+                background: "#ffffffdd",
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between"
+              }}
+            >
               <Typography variant="h5" align="center" gutterBottom fontWeight={600}>
                 Employee Login
               </Typography>
@@ -166,6 +207,19 @@ const Login = () => {
                     )
                   }}
                 />
+                <Typography align="right" sx={{ mt: 1 }}>
+                  <a
+                    href="/forgot-password/employee"
+                    style={{
+                      textDecoration: "none",
+                      color: "#d32f2f",
+                      fontSize: "14px",
+                      fontWeight: 500
+                    }}
+                  >
+                    Forgot Password?
+                  </a>
+                </Typography>
                 <Button
                   type="submit"
                   fullWidth
