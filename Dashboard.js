@@ -70,7 +70,6 @@ const Dashboard = () => {
               variant="contained"
               color="error"
               onClick={() => {
-                // Handle actual logout logic here if needed
                 navigate("/login");
               }}
             >
@@ -136,7 +135,7 @@ const Dashboard = () => {
                 {item.button ? (
                   <Button
                     variant="contained"
-                    color="inherit"
+                    color="secondary"
                     sx={{ mt: 2 }}
                     onClick={() => navigate("/submit-expense")}
                   >
