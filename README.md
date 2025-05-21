@@ -110,6 +110,25 @@ npm start
 http://localhost:3000  
 
 ---
+com.example.expensetracker
+│
+├── controller
+│   └── ExpenseController.java     # Handles HTTP requests related to expenses
+│
+├── model
+│   └── Expense.java               # Entity class mapped to H2 database table
+│
+├── repository
+│   └── ExpenseRepository.java     # Interface extending JpaRepository
+
+| Technology        | Description                                                                |
+| ----------------- | -------------------------------------------------------------------------- |
+| Spring Boot       | Java-based framework to build the REST API backend                         |
+| Spring Web        | For handling HTTP requests and building RESTful services                   |
+| Spring Data JPA   | For easy interaction with the H2 database using Java Persistence API (JPA) |
+| H2 Database       | Lightweight in-memory database used for development/testing                |
+| Lombok (Optional) | Reduces boilerplate code (e.g., getters/setters)                           |
+| Multipart Upload  | Supports PDF file upload for expense invoices                              |
 
 ## Upcoming Features
 ✔ Backend Implementation (Node.js, Express, MongoDB/PostgreSQL)  
@@ -118,5 +137,5 @@ http://localhost:3000
 ✔ Notifications for Approvals/Rejections 
   
 
----
+
 
